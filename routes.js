@@ -1,46 +1,46 @@
 let express = require('express');
 let router = express.Router();
 let Employee = require('./model');
-router.get('/', function(req, res){
-     Employee.getEmployees(function(err,employees){
+router.get('/', (req, res) => {
+     Employee.getEmployees((err, employees) => {
          if(err) throw err;
          res.json(employees);
      });
  })
-router.post('/', function(req, res){
+router.post('/', (req, res) => {
     let newEmployee = {
         name: req.body.name,
         position : req.body.position,
         department : req.body.department,
         salary: req.body.salary
     }
-     Employee.addEmployee(newEmployee,function(err,employee){
+     Employee.addEmployee(newEmployee, (err, employee) => {
          if(err) throw err;
          res.json(employee);
      });
  })
- router.put('/:_id', function(req, res){
+ router.put('/:_id', (req, res) => {
      let update = {
         name: req.body.name,
         position : req.body.position,
         department : req.body.department,
         salary: req.body.salary
     }
-     Employee.updateEmployee(req.params._id , update, function(err,employee){
+     Employee.updateEmployee(req.params._id , update, (err, employee) => {
          if(err) throw err;
          res.json(employee);
      });
  })
- router.delete('/:_id', function(req, res){
+ router.delete('/:_id', (req, res) => {
 
-     Employee.deleteEmployee(req.params._id ,  function(err,employee){
+     Employee.deleteEmployee(req.params._id ,  (err, employee) => {
          if(err) throw err;
          res.json(employee);
      });
  })
- router.get('/:_id', function(req, res){
+ router.get('/:_id', (req, res) => {
 
-     Employee.getEmployee(req.params._id , function(err,employee){
+     Employee.getEmployee(req.params._id , (err, employee) => {
          if(err) throw err;
          res.json(employee);
      });
