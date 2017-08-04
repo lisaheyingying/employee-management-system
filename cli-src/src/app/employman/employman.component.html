@@ -1,0 +1,41 @@
+<div>
+  <app-navbar 
+	  [page]="page"
+		[model]="employeeInstance">
+	</app-navbar>
+  <div class="container">
+    <standard-table class="highlight-table" 
+		  [tableHeader]="header"
+			[tableContent]="content"
+			(delete)="deleteEmployee($event)">
+    </standard-table>
+    <!--<table class="table table-bordered">
+				<thead>
+				<tr>
+					<td>Name</td>
+					<td>Position</td>
+					<td>Department</td>
+					<td>BeseSalary</td>
+					<td>Endowment Insurance</td>
+					<td>Insurance</td>
+					<td width="275" align="center">Action</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr  *ngFor="let employee of employees">
+					<td>{{employee.name}}</td>
+					<td>{{employee.position}}</td>
+					<td>{{employee.department}}</td>
+					<td>{{employee.baseSalary}}</td>
+					<td>{{employee.endowmentInsurance}}</td>
+					<td>{{employee.insurance}}</td>
+					<td width="275"> 
+						<a class="btn btn-info" routerLink="/show/{{employee._id}}">Detail</a> 
+						<a class="btn btn-success"  routerLink="/edit/{{employee._id}}">Edit</a>
+						<a class="btn btn-danger" (click)="delete(employee._id)">Delete</a>
+					</td>
+				</tr>
+				</tbody>
+	</table>-->
+  </div>
+</div>

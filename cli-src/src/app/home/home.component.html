@@ -1,22 +1,83 @@
-<table class="table table-bordered">
-		  <thead>
-			<tr>
-			  <td>Name</td>
-			  <td>Position</td>
-			  <td>Department</td>
-			  <td width="275" align="center">Action</td>
-			</tr>
-		  </thead>
-		  <tbody>
-			 <tr  *ngFor="let employee of employees">
-				<td>{{employee.name}}</td>
-				<td>{{employee.position}}</td>
-				<td>{{employee.department}}</td>
-				<td width="275"> 
-					<a class="btn btn-info" routerLink="/show/{{employee._id}}">Detail</a> 
-					<a class="btn btn-success"  routerLink="/edit/{{employee._id}}">Edit</a>
-					<a class="btn btn-danger" (click)="deleteEmployee(employee._id)">Delete</a>
-				</td>
-			 </tr>
-		  </tbody>
-		</table>
+<div class="header">
+    <div>
+        <h1 class="head-title navbar-brand">LEADER</h1>
+        <ul class="nav nav-pills head-list">
+            <li>
+                <a routerLink="/home">Home</a>
+            </li>
+            <li>
+                <a href="#">Products</a>
+            </li>
+            <li>
+                <a href="#">About Us</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="content">
+    <div class="container">
+        <div class="content-section"> 
+            <div class="row sub-section">   
+                <div class="col-sm-6">
+                    <a routerLink="/employee">
+                        <div class="block">
+                            <div class="circle">
+                            </div> 
+                            <div class="block-content">
+                                <img [src]="imageEmployee">
+                                <p class="sub-section-title">Employee Management System</p>
+                                <p>You can get all the employees' information here, including name, age, cellphone number, category, etc</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6">
+                    <a routerLink="">
+                        <div class="block">
+                            <div class="circle">
+                            </div> 
+                            <div class="block-content">
+                                <img [src]="imagePaySlip">
+                                <p class="sub-section-title">Payslip System</p>
+                                <p>You can get all the employees' information here, including name, age, cellphone number, category, etc</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            
+            </div>
+            <div class="row sub-section">
+                <div class="col-sm-6">
+                    <a routerLink="/production">
+                        <div class="block">
+                            <div class="circle">
+                            </div> 
+                            <div class="block-content">
+                                <img [src]="imageProduction">
+                                <p class="sub-section-title">Production System</p>
+                                <p>You can get all the employees' information here, including name, age, cellphone number, category, etc</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6">
+                    <a>
+                        <div class="block">
+                            <div class="circle">
+                            </div> 
+                            <div class="block-content">
+                                <img [src]="imageAttendance">
+                                <p class="sub-section-title">Attendance System</p>
+                                <p>You can get all the employees' information here, including name, age, cellphone number, category, etc</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div>
+

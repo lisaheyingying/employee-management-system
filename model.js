@@ -1,25 +1,30 @@
 let mongoose = require('mongoose');
 let empSchema = new mongoose.Schema({
     name: String,
-    position : String,
-    department : String,
-    salary : String
+    position: String,
+    department: String,
+    baseSalary: String,
+    endowmentInsurance: String,
+    insurance: String,
 })
 
-let Employee = module.exports = mongoose.model('Employee', empSchema);
+let  Employee =module.exports= mongoose.model('Employee', empSchema);
 
-module.exports.getEmployees = callback => {
+Employee.getEmployees = callback => {
     Employee.find(callback);
 }
-module.exports.addEmployee = (newEmployee, callback) => {
+Employee.addEmployee = (newEmployee, callback) => {
     Employee.create(newEmployee, callback);
 }
-module.exports.updateEmployee = (id, newEmployee, callback) => {
+Employee.updateEmployee = (id, newEmployee, callback) => {
     Employee.findByIdAndUpdate(id, newEmployee, callback);
 }
-module.exports.deleteEmployee = (id, callback) => {
+Employee.deleteEmployee = (id, callback) => {
     Employee.findByIdAndRemove(id, callback);
 }
-module.exports.getEmployee = (id, callback) => {
+Employee.getEmployee = (id, callback) => {
     Employee.findById(id, callback);
+}
+Employee.getEmployeesName = callback => {
+    Employee.find({},'name', callback)
 }

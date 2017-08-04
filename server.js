@@ -21,7 +21,7 @@ let router = require('./routes');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cors());
-app.use('/api/employees', router);
+app.use('/api', router);
 app.listen(port, () => {
     console.log("server is running on port  "+ port);
 })

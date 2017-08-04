@@ -2,5 +2,7 @@ export class Employee{
     name: string;
     position: string;
     department: string;
-    salary: string;
+    baseSalary: string;
+    endowmentInsurance: string;
+    insurance: string;
 }

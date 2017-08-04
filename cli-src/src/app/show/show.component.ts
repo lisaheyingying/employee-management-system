@@ -31,6 +31,6 @@ export class ShowComponent implements OnInit {
         })
   }
   goBack(){
-    this.router.navigate(['/home'])
+    this.router.navigate(['/employee'])
   }
 }
