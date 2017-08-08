@@ -23,11 +23,13 @@
       [close-on-select]="false"  />-->
   <div class="container">
     <div>
-      <span class="large-font">Select a date</span>
+      <span class="large-font">选择日期</span>
       <div class="date-selector">
-        <input 
+        <input
         [(ngModel)]="selectedDate"
-        ng2-datetime-picker
+        (ngModelChange)="getProductions($event)"
+        required
+        ngui-datetime-picker
         date-only="true" />
       </div>
     </div>
@@ -35,6 +37,7 @@
       class="highlight-table"
       [tableHeader]="header"
       [tableContent]="content"
+      [page]="page.toLowerCase()"
       (delete)="deleteProduction($event)">
     </standard-table>
   </div>

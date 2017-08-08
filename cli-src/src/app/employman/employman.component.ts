@@ -4,16 +4,19 @@ import { EmpService } from '../emp.service'
 import { Employee } from '../employee'
 import {employeeHeader} from '../dataModel'
 
+
 @Component({
   selector: 'app-employman',
   templateUrl: './employman.component.html',
-  styleUrls: ['./employman.component.css']
+ 
+  styleUrls: ['./employman.component.scss']
 })
 export class EmploymanComponent implements OnInit {
 
   header: any[] = employeeHeader;
   content: any[] = [];
-  page: string = 'Employee'
+  page: string = 'Employee';
+
 
   constructor(
     public empService:EmpService,
@@ -22,6 +25,8 @@ export class EmploymanComponent implements OnInit {
 
   ngOnInit() {
     this.getEmployees();
+    
+  
   }
   employeeInstance:Employee;
   getEmployees(){

@@ -35,13 +35,14 @@ export class DailyProductionComponent implements OnInit {
     getProductions(date) {
         this.dailyProductionService.getProductions(date)
             .subscribe(productions => {
+                this.content = [];
                 // if today is new created
                 if (productions.length < 1) {
                     this.empService.getEmployeesName()
                         .subscribe(employees => {
                             employees.forEach(employee => {
                                 let newProduction = {
-                                    date: moment().format('YYYY-MM-DD'),
+                                    date: date,
                                     name: employee.name,
                                     shift: "day",
                                     area: '',
