@@ -1,8 +1,13 @@
 # mean-employee-app
  Employee Management System web apps using MongoDB, Express, AngularJS and Node.js
 
+# install dependencies
+ MogoDB:
+    CentOS 7: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/
+    Other OS: https://docs.mongodb.com/manual/administration/install-community/
+
 # Backend server using node.js server and data are stored in MongoDB,  you can run the following command to start mongo db  and backend server. This will start node server at port 3000
- mongod 
+ mongod
  npm run start
 #Notice: you first need to create db file folder for mongo db, the default folder located at c:/data
 
