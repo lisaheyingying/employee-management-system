@@ -8,13 +8,13 @@
       </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let rowContent of tableContent">
+      <tr *ngFor="let rowContent of tableContent | employmanFilter:filter">
         <td *ngFor="let head of tableHeader">
           {{rowContent[head.key]}}
         </td>
         <td width="12%">
-          <a class="btn btn-info" routerLink="/show/{{rowContent._id}}">Detail</a>
-          <a class="btn btn-success" routerLink="/edit/{{rowContent._id}}">Edit</a>
+          <a class="btn btn-info" routerLink="/{{page}}/show/{{rowContent._id}}">Detail</a>
+          <a class="btn btn-success" routerLink="/{{page}}/edit/{{rowContent._id}}">Edit</a>
           <a class="btn btn-danger" (click)="handleDelete(rowContent._id)">Delete</a>
         </td>
       </tr>

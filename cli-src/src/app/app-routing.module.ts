@@ -10,6 +10,7 @@ import { AddProductionComponent } from './add/add-production.component';
 import { EditComponent } from './edit/edit.component';
 import { ShowComponent } from './show/show.component';
 import { HomeComponent } from './home/home.component';
+import { EditProductionComponent } from './edit/edit-production.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -17,9 +18,11 @@ const routes: Routes = [
   { path: 'employee', component: EmploymanComponent },
   { path: 'production', component: DailyProductionComponent },
   { path: 'production/add', component: AddProductionComponent },
+  { path: 'production/edit/:id', component: EditProductionComponent },
+  { path: 'production/show/:id', component: AddProductionComponent },
   { path: 'employee/add', component: AddComponent },
-  { path: 'edit/:id', component: EditComponent },
-  { path: 'show/:id', component: ShowComponent },
+  { path: 'employee/edit/:id', component: EditComponent },
+  { path: 'employee/show/:id', component: ShowComponent },
 
 ];
 

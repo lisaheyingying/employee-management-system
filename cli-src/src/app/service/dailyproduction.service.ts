@@ -7,7 +7,7 @@ export class DailyProductionService {
 
     constructor(private http: Http) { }
     getProductions(date) {
-        return this.http.get("http://localhost:3000/api/production/" + date)
+        return this.http.get("http://localhost:3000/api/productions/" + date)
             .map(res => res.json());
     }
     addProduction(info) {
