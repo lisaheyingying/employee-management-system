@@ -10,7 +10,7 @@ export class EmpService {
       .map(res => res.json());
   }
   getEmployeesName() {
-    return this.http.get("http://localhost:3000/api/employee/name")
+    return this.http.get("http://localhost:3000/api/employees/name")
       .map(res => res.json());
   }
   addEmployee(info) {

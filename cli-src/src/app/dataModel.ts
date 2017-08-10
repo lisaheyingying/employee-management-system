@@ -11,17 +11,25 @@ export const productCategoryMap = [
 
 export const productHeader = [
     { key: "date", value: "Date" },
-    { key: "shift", value: "Shift" },
     { key: "name", value: "Name" },
+    { key: "shift", value: "Shift" },
     { key: "area", value: "Area" },
     ...productCategoryMap
 ]
 
 export const employeeHeader = [
-    {key:"name",value:"Name"},
-    {key:"position",value:"Position"},
-    {key:"department",value:"Department"},
-    {key:"baseSalary",value:"BaseSalary"},
-    {key:"endowmentInsurance",value:"Endowment Insurance"},
-    {key:"insurance",value:"Insurance"}
+    { key: "name", value: "Name" },
+    { key: "position", value: "Position" },
+    { key: "department", value: "Department" },
+    { key: "baseSalary", value: "BaseSalary" },
+    { key: "endowmentInsurance", value: "Endowment Insurance" },
+    { key: "insurance", value: "Insurance" }
+]
+
+export const deductHeader = [
+    { key: "date", value: "Date" },
+    { key: "name", value: "Name" },
+    { key: "shift", value: "Shift" },
+    { key: "area", value: "Area" },
+    { key: "money", value: "Money" }
 ]

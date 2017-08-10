@@ -4,6 +4,32 @@ let Employee = require('./model');
 
 let dailyProduction = require('./dailyProduction');
 let monthProduction = require('./monthProduction');
+let dailyDeduction = require('./dailyDeduction');
+
+//******   Get request ********/
+router.get('/employee/:_id', (req, res) => {
+
+    Employee.getEmployee(req.params._id, (err, employee) => {
+        if (err) throw err;
+        res.json(employee);
+    });
+})
+
+router.get('/production/:_id', (req, res) => {
+
+    dailyProduction.getProduction(req.params._id, (err, production) => {
+        if (err) throw err;
+        res.json(production);
+    });
+})
+
+router.get('/deduction/:_id', (req, res) => {
+
+    dailyDeduction.getProduction(req.params._id, (err, deduction) => {
+        if (err) throw err;
+        res.json(deduction);
+    });
+})
 
 
 router.get('/employee', (req, res) => {
@@ -12,7 +38,7 @@ router.get('/employee', (req, res) => {
         res.json(employees);
     });
 })
-router.get('/employee/name', (req, res) => {
+router.get('/employees/name', (req, res) => {
 
     Employee.getEmployeesName((err, names) => {
         if (err) throw err;
@@ -25,7 +51,14 @@ router.get('/productions/:date', (req, res) => {
         res.json(productions);
     });
 })
+router.get('/deductions/:date', (req, res) => {
+    dailyDeduction.getDeductions(req.params.date, (err, deductions) => {
+        if (err) throw err;
+        res.json(deductions);
+    });
+})
 
+//******   Post request ********/
 router.post('/employee', (req, res) => {
     let newEmployee = {
         name: req.body.name,
@@ -60,7 +93,21 @@ router.post('/production', (req, res) => {
         res.json(newProduction);
     });
 })
+router.post('/deduction', (req, res) => {
+    let newDeduction = {
+        date: req.body.date,
+        name: req.body.name,
+        shift: req.body.shift,
+        area: req.body.area,
+        money: req.body.money
+    }
+    dailyDeduction.addDeduction(newDeduction, (err, Deduction) => {
+        if (err) throw err;
+        res.json(newDeduction);
+    });
+})
 
+//******   Put request ********/
 router.put('/employee/:_id', (req, res) => {
     let update = {
         name: req.body.name,
@@ -94,6 +141,24 @@ router.put('/production/:_id', (req, res) => {
         res.json(production);
     });
 })
+router.put('/deduction/:_id', (req, res) => {
+    let newDeduction = {
+
+        date: req.body.date,
+        name: req.body.name,
+        shift: req.body.shift,
+        area: req.body.area,
+        money: req.body.money
+
+    }
+    dailyDeduction.updateDeduction(req.params._id, newDeduction, (err, deduction) => {
+        if (err) throw err;
+        res.json(deduction);
+    });
+})
+
+//******   Delete request ********/
+
 router.delete('/employee/:_id', (req, res) => {
 
     Employee.deleteEmployee(req.params._id, (err, employee) => {
@@ -108,18 +173,12 @@ router.delete('/production/:_id', (req, res) => {
         res.json(production);
     });
 })
-router.get('/employee/:_id', (req, res) => {
+router.delete('/deduction/:_id', (req, res) => {
 
-    Employee.getEmployee(req.params._id, (err, employee) => {
+    dailyDeduction.deleteDeduction(req.params._id, (err, deduction) => {
         if (err) throw err;
-        res.json(employee);
+        res.json(deduction);
     });
 })
-router.get('/production/:_id', (req, res) => {
 
-    dailyProduction.getProduction(req.params._id, (err, production) => {
-        if (err) throw err;
-        res.json(production);
-    });
-})
 module.exports = router;

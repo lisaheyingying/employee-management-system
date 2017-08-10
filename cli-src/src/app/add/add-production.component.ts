@@ -25,6 +25,6 @@ export class AddProductionComponent implements OnInit {
         .subscribe(()=> this.goBack())
   }
    goBack(){
-    this.router.navigate(['/production'])
+    this.router.navigate(['/production-overview/dailyproduction'])
   }
 }

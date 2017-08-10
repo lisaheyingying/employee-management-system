@@ -1,0 +1,39 @@
+.left-nav {
+  background-color:lightblue;
+  user-select: none;
+  cursor: default;
+  position: absolute;
+  height: 100%;
+  width: 15%;
+  margin-left:-40px;
+  margin-top:-15px;
+  nav {
+    list-style: none;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+    li {
+      margin-top: 50px;
+      font-size: 20px;
+    }
+    a {
+      cursor: pointer;
+      display: block;
+      // padding: 0px 33px 0 20px;
+      // height: 47px;
+      font-size: 16px;
+      color: black;
+      line-height: 47px;
+      text-decoration: none;
+      position: relative;
+      z-index: 10000;
+    }
+  }
+}
+.content{
+  position: absolute;
+  width:90%;
+  margin-left:200px;
+}

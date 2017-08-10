@@ -37,6 +37,6 @@ export class EditProductionComponent implements OnInit {
     }
 
     goBack() {
-        this.router.navigate(['/production'])
+        this.router.navigate(['/dailyproduction'])
     }
 }

@@ -1,0 +1,85 @@
+  <div class="panel panel-default" >
+  <div class="panel-heading">Production detail Form : You can see the detail information of production in this page of the EMS Apps.</div>
+  <div class="panel-body">
+    <form class="form-horizontal" *ngIf=production>
+   <div class="form-group">
+    <label for="date" class="col-sm-2 control-label">日期 : </label>
+      <div class="col-sm-9">
+        <p class="form-control">{{production.date}}</p>
+      </div>
+  </div>
+  <div class="form-group">
+    <label for="name" class="col-sm-2 control-label">员工姓名 : </label>
+    <div class="col-sm-9">
+      <p class="form-control">{{production.name}}</p> 
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="area" class="col-sm-2 control-label">区域 : </label>
+    <div class="col-sm-9">
+     <p class="form-control">{{production.area}}</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="shift" class="col-sm-2 control-label">班次 : </label>
+    <div class="col-sm-9">
+      <p class="form-control">{{production.shift}}</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="c1" class="col-sm-2 control-label">c1 产量 : </label>
+    <div class="col-sm-9">
+      <p class="form-control">{{production.c1}}</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="c2" class="col-sm-2 control-label">c2 产量 : </label>
+    <div class="col-sm-9">
+      <p class="form-control">{{production.c2}}</p>
+    </div>
+  </div>
+    <div class="form-group">
+    <label for="c3" class="col-sm-2 control-label">c3 产量 : </label>
+    <div class="col-sm-9">
+      <p class="form-control">{{production.c3}}</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="c4" class="col-sm-2 control-label">c4 产量 : </label>
+    <div class="col-sm-9">
+      <p class="form-control">{{production.c4}}</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="c5" class="col-sm-2 control-label">c5 产量 : </label>
+    <div class="col-sm-9">
+      <p class="form-control">{{production.c5}}</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="c6" class="col-sm-2 control-label">c6 产量 : </label>
+    <div class="col-sm-9">
+      <p class="form-control">{{production.c6}}</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="c7" class="col-sm-2 control-label">c7 产量 : </label>
+    <div class="col-sm-9">
+      <p class="form-control">{{production.c7}}</p>
+    </div>
+  </div>
+  <!--<div class="form-group">
+    <label for="id" class="col-sm-2 control-label">Employee's ID : </label>
+    <div class="col-sm-9">
+      <p class="form-control">08df088d89dsfhjf87</p>
+    </div>
+  </div>-->
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+      <a class="btn btn-info" (click)="goBack()">Cancel</a>
+    </div>
+  </div>
+</form>
+
+  </div>
+</div>

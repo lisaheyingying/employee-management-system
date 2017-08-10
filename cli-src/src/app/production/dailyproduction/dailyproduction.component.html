@@ -2,30 +2,11 @@
 <div>
   <app-navbar [page]="page">
 	</app-navbar>
-<!--
-   <form [formGroup]="myForm">
-     <input
-       required
-       [(ngModel)]='myVar'
-       formControlName="date"
-       ng2-datetime-picker
-        date-only="true"/>
-   </form>-->
-
-   <!--<input
-      [(ngModel)]="date2" ng2-datetime-picker
-      date-format="DD-MM-YYYY hh:mm"
-      year="2014"
-      month="12"
-      day="31"
-      hour="23"
-      minute='59'
-      [close-on-select]="false"  />-->
   <div class="container">
     <div>
       <span class="large-font">选择日期</span>
       <div class="date-selector">
-        <input
+        <input class="date-input"
         [(ngModel)]="selectedDate"
         (ngModelChange)="getProductions($event)"
         required

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DailyProductionService } from '../service/dailyproduction.service'
-import { EmpService } from '../emp.service'
-import { DailyProduct } from '../service/dailyproduction'
-import { productHeader, productCategoryMap } from '../dataModel'
+import { DailyProductionService } from '../../service/dailyproduction.service'
+import { EmpService } from '../../emp.service'
+import { DailyProduct } from '../../service/dailyproduction'
+import { productHeader, productCategoryMap } from '../../dataModel'
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as moment from 'moment'
 
@@ -16,7 +16,7 @@ export class DailyProductionComponent implements OnInit {
     //productions: any[] = [];
     header: any[] = productHeader;
     content: any[] = [];
-    page: string = 'Production'
+    page: string = 'dailyProduction'
     selectedDate: String = moment().format('YYYY-MM-DD');
 
 
@@ -72,6 +72,6 @@ export class DailyProductionComponent implements OnInit {
             });
     }
     goBack() {
-        this.router.navigate(['/production'])
+        this.router.navigate(['/dailyproduction'])
     }
 }
