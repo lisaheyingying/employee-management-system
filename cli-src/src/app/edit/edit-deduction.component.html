@@ -1,24 +1,23 @@
 	<div class="panel panel-default">
-  <div class="panel-heading">Deduction Entry Form : You can add an deduction's detail information into this EMS Apps.</div>
+  <div class="panel-heading">Deduction Edit Form : You can edit an deduction's detail information into this EMS Apps.</div>
   <div class="panel-body">
-  <form class="form-horizontal" (submit)="addDeduction()">
-
+  <form class="form-horizontal" (submit)="updateDeduction()">
   <div class="form-group">
     <label for="date" class="col-sm-2 control-label">时间 : </label>
     <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="model.date" ngui-datetime-picker date-only="true" name="date">
+      <input type="text" class="form-control" [(ngModel)]="deduction.date" ngui-datetime-picker date-only="true" name="date">
     </div>
   </div>
   <div class="form-group">
     <label for="name" class="col-sm-2 control-label">姓名 : </label>
     <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="model.name" name="name" >
+      <input type="text" class="form-control" [(ngModel)]="deduction.name" name="name" >
     </div>
   </div>
   <div class="form-group">
     <label for="shift" class="col-sm-2 control-label">班次 : </label>
     <div class="col-sm-9">
-        <select class="form-control" name="shift" ng-model="model.shift">
+         <select class="form-control" name="shift" ng-model="deduction.shift">
             <option value="day">早班</option>
             <option value="night">晚班</option>
         </select>
@@ -28,21 +27,20 @@
   <div class="form-group">
     <label for="area" class="col-sm-2 control-label">区域 : </label>
     <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="model.area" name="area">
+      <input type="text" class="form-control" [(ngModel)]="deduction.area" name="area">
     </div>
   </div>
   <div class="form-group">
     <label for="money" class="col-sm-2 control-label">金额 : </label>
     <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="model.money" name="money">
+      <input type="text" class="form-control" [(ngModel)]="deduction.money" name="money">
     </div>
   </div>
   
 
-
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-8">
-      <button type="submit" class="btn btn-success">Save</button>
+      <button type="submit" class="btn btn-success">Update</button>
        <a class="btn btn-info" (click)="goBack()">Cancel</a>
     </div>
    

@@ -4,27 +4,30 @@
   <form class="form-horizontal" (submit)="addProduction()">
 
   <div class="form-group">
-    <label for="emp_name" class="col-sm-2 control-label">Employee's Full Name : </label>
+    <label for="emp_name" class="col-sm-2 control-label">姓名 </label>
     <div class="col-sm-9">
       <input type="text" class="form-control" [(ngModel)]="model.name" name="name" >
     </div>
   </div>
   <div class="form-group">
-    <label for="emp_name" class="col-sm-2 control-label">Shift : </label>
+    <label for="emp_name" class="col-sm-2 control-label">班次</label>
     <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="model.shift" name="name" >
+        <select class="form-control" name="shift" ng-model="model.shift">
+            <option value="day">早班</option>
+            <option value="night">晚班</option>
+        </select>
     </div>
   </div>
   <div class="form-group">
-    <label for="position" class="col-sm-2 control-label">Date : </label>
+    <label for="position" class="col-sm-2 control-label">时间</label>
     <div class="col-sm-9">
       <input type="text" class="form-control" [(ngModel)]="model.date" ngui-datetime-picker date-only="true" name="date">
     </div>
   </div>
   <div class="form-group">
-    <label for="department" class="col-sm-2 control-label">Area Name : </label>
+    <label for="department" class="col-sm-2 control-label">区域</label>
     <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="area" name="area">
+      <input type="text" class="form-control" [(ngModel)]="model.area" name="area">
     </div>
   </div>
   <div class="form-group">

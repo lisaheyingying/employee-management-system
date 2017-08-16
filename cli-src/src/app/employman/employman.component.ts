@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { EmpService } from '../emp.service'
-import { Employee } from '../employee'
-import {employeeHeader} from '../dataModel'
+import { EmpService } from '../service/emp.service'
+import { Employee } from '../service/employee'
+import {employeeHeader} from '../utils/dataModel'
 
 
 @Component({

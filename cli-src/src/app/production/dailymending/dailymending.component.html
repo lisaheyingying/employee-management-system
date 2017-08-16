@@ -1,4 +1,3 @@
-
 <div>
   <app-navbar [page]="page">
 	</app-navbar>
@@ -8,7 +7,7 @@
       <div class="date-selector">
         <input class="date-input"
         [(ngModel)]="selectedDate"
-        (ngModelChange)="getDeductions($event)"
+        (ngModelChange)="getMendings($event)"
         required
         ngui-datetime-picker
         date-only="true" />
@@ -19,7 +18,7 @@
       [tableHeader]="header"
       [tableContent]="content"
       [page]="page.toLowerCase()"
-      (delete)="deleteDeduction($event)">
+      (delete)="deleteMending($event)">
     </standard-table>
   </div>
 </div>

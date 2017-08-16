@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DailyProductionService } from '../../service/dailyproduction.service'
-import { EmpService } from '../../emp.service'
+import { EmpService } from '../../service/emp.service'
 import { DailyProduct } from '../../service/dailyproduction'
-import { productHeader, productCategoryMap } from '../../dataModel'
+import { productHeader, productCategoryMap } from '../../utils/dataModel'
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as moment from 'moment'
 
@@ -44,7 +44,7 @@ export class DailyProductionComponent implements OnInit {
                                 let newProduction = {
                                     date: date,
                                     name: employee.name,
-                                    shift: "day",
+                                    shift: "甲班",
                                     area: '',
                                     c1: 0,
                                     c2: 0,

@@ -13,9 +13,9 @@
           {{rowContent[head.key]}}
         </td>
         <td width="12%">
-          <a class="btn btn-info" routerLink="/{{page}}/show/{{rowContent._id}}">Detail</a>
-          <a class="btn btn-success" routerLink="/{{page}}/edit/{{rowContent._id}}">Edit</a>
-          <a class="btn btn-danger" (click)="handleDelete(rowContent._id)">Delete</a>
+          <a class="btn btn-info" routerLink="/{{page}}/show/{{rowContent._id}}">查看详情</a>
+          <a class="btn btn-success" routerLink="/{{page}}/edit/{{rowContent._id}}">编辑</a>
+          <a class="btn btn-danger" (click)="handleDelete(rowContent._id)">删除</a>
         </td>
       </tr>
   </tbody>

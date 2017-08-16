@@ -1,0 +1,42 @@
+  <div class="panel panel-default">
+  <div class="panel-heading">Mending Entry Form : You can add an mending's detail information into this EMS Apps.</div>
+  <div class="panel-body">
+  <form class="form-horizontal" (submit)="addMending()">
+
+  <div class="form-group">
+    <label for="date" class="col-sm-2 control-label">时间 : </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" [(ngModel)]="mending.date" ngui-datetime-picker date-only="true" name="date">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="name" class="col-sm-2 control-label">姓名 : </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" [(ngModel)]="mending.name" name="name" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="money" class="col-sm-2 control-label">金额 : </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" [(ngModel)]="mending.money" name="money" >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="bonus" class="col-sm-2 control-label">补贴 : </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" [(ngModel)]="mending.bonus" name="bonus">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+      <button type="submit" class="btn btn-success">Save</button>
+       <a class="btn btn-info" (click)="goBack()">Cancel</a>
+    </div>
+   
+  </div>
+</form>
+
+  </div>
+</div>

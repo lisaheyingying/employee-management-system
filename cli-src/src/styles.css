@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+large-font{
+    font-size: large;
+}
+.date-selector{
+    border: solid 2px #ccc;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+input.date-input{
+    min-width:200px;
+    font-size:15px;
+}

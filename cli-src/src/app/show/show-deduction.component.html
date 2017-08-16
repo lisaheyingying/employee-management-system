@@ -1,0 +1,49 @@
+  <div class="panel panel-default" >
+  <div class="panel-heading">Deduction detail Form : You can see the detail information of deduction in this page of the EMS Apps.</div>
+  <div class="panel-body">
+    <form class="form-horizontal" *ngIf=deduction>
+   <div class="form-group">
+    <label for="date" class="col-sm-2 control-label">日期 : </label>
+      <div class="col-sm-9">
+        <p class="form-control">{{deduction.date}}</p>
+      </div>
+  </div>
+  <div class="form-group">
+    <label for="name" class="col-sm-2 control-label">员工姓名 : </label>
+    <div class="col-sm-9">
+      <p class="form-control">{{deduction.name}}</p> 
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="area" class="col-sm-2 control-label">区域 : </label>
+    <div class="col-sm-9">
+     <p class="form-control">{{deduction.area}}</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="shift" class="col-sm-2 control-label">班次 : </label>
+    <div class="col-sm-9">
+      <p class="form-control">{{deduction.shift}}</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="c7" class="col-sm-2 control-label">金额 : </label>
+    <div class="col-sm-9">
+      <p class="form-control">{{deduction.money}}</p>
+    </div>
+  </div>
+  <!--<div class="form-group">
+    <label for="id" class="col-sm-2 control-label">Employee's ID : </label>
+    <div class="col-sm-9">
+      <p class="form-control">08df088d89dsfhjf87</p>
+    </div>
+  </div>-->
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+      <a class="btn btn-info" (click)="goBack()">Cancel</a>
+    </div>
+  </div>
+</form>
+
+  </div>
+</div>

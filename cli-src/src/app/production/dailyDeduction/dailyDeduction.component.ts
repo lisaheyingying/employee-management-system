@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DailyDeductionService } from '../../service/dailydeduction.service'
-import { EmpService } from '../../emp.service'
+import { EmpService } from '../../service/emp.service'
 import { DailyDeduction } from '../../service/dailyDeduction'
-import { deductHeader } from '../../dataModel'
+import { deductHeader } from '../../utils/dataModel'
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as moment from 'moment'
 
@@ -44,7 +44,7 @@ export class DailyDeductionComponent implements OnInit {
                                 let newDeduction = {
                                     date: date,
                                     name: employee.name,
-                                    shift: "day",
+                                    shift: "甲班",
                                     area: '',
                                     money:0
                                 }

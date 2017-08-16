@@ -10,6 +10,7 @@ import {Router} from '@angular/router'
 })
 
 export class MenuComponent implements OnInit {
+    @Input() menulist: any[];
     constructor() { }
     ngOnInit() {
        

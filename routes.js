@@ -2,11 +2,15 @@ let express = require('express');
 let router = express.Router();
 let Employee = require('./model');
 
-let dailyProduction = require('./dailyProduction');
-let monthProduction = require('./monthProduction');
-let dailyDeduction = require('./dailyDeduction');
+let dailyProduction = require('./models/dailyProduction');
+let monthProduction = require('./models/monthProduction');
+let dailyDeduction = require('./models/dailyDeduction');
+let dailyMending = require('./models/dailyMending');
+let monthlyMending = require('./models/monthlyMending');
 
 //******   Get request ********/
+
+//******  Get a specific object *******/
 router.get('/employee/:_id', (req, res) => {
 
     Employee.getEmployee(req.params._id, (err, employee) => {
@@ -25,9 +29,25 @@ router.get('/production/:_id', (req, res) => {
 
 router.get('/deduction/:_id', (req, res) => {
 
-    dailyDeduction.getProduction(req.params._id, (err, deduction) => {
+    dailyDeduction.getDeduction(req.params._id, (err, deduction) => {
         if (err) throw err;
         res.json(deduction);
+    });
+})
+
+router.get('/mending/:_id', (req, res) => {
+
+    dailyMending.getMending(req.params._id, (err, mending) => {
+        if (err) throw err;
+        res.json(mending);
+    });
+})
+
+router.get('/monthlymending/:_id', (req, res) => {
+
+    monthlyMending.getMending(req.params._id, (err, mending) => {
+        if (err) throw err;
+        res.json(mending);
     });
 })
 
@@ -57,6 +77,14 @@ router.get('/deductions/:date', (req, res) => {
         res.json(deductions);
     });
 })
+
+router.get('/mendings/:date', (req, res) => {
+    dailyMending.getMendings(req.params.date, (err, mendings) => {
+        if (err) throw err;
+        res.json(mendings);
+    });
+})
+
 
 //******   Post request ********/
 router.post('/employee', (req, res) => {
@@ -104,6 +132,34 @@ router.post('/deduction', (req, res) => {
     dailyDeduction.addDeduction(newDeduction, (err, Deduction) => {
         if (err) throw err;
         res.json(newDeduction);
+    });
+})
+
+router.post('/mending', (req, res) => {
+    let newMending = {
+        date: req.body.date,
+        name: req.body.name,
+        shift: req.body.shift,
+        category: req.body.category,
+        production: req.body.production
+    }
+    dailyMending.addMending(newMending, (err, Mending) => {
+        if (err) throw err;
+        res.json(newMending);
+    });
+})
+
+router.post('/monthlymending', (req, res) => {
+    let newMending = {
+        date: req.body.date,
+        name: req.body.name,
+        shift: req.body.shift,
+        money: req.body.money,
+        bonus: req.body.bonus
+    }
+    monthlyMending.addMending(newMending, (err, Mending) => {
+        if (err) throw err;
+        res.json(newMending);
     });
 })
 
@@ -156,7 +212,19 @@ router.put('/deduction/:_id', (req, res) => {
         res.json(deduction);
     });
 })
-
+router.put('/mending/:_id', (req, res) => {
+    let newMending = {
+        date: req.body.date,
+        name: req.body.name,
+        shift: req.body.shift,
+        category: req.body.category,
+        production: req.body.production
+    }
+    dailyMending.updateMending(req.params._id, newMending, (err, mending) => {
+        if (err) throw err;
+        res.json(mending);
+    });
+})
 //******   Delete request ********/
 
 router.delete('/employee/:_id', (req, res) => {
@@ -178,6 +246,21 @@ router.delete('/deduction/:_id', (req, res) => {
     dailyDeduction.deleteDeduction(req.params._id, (err, deduction) => {
         if (err) throw err;
         res.json(deduction);
+    });
+})
+router.delete('/mending/:_id', (req, res) => {
+
+    dailyMending.deleteMending(req.params._id, (err, mending) => {
+        if (err) throw err;
+        res.json(mending);
+    });
+})
+
+router.delete('/monthlymending/:_id', (req, res) => {
+
+    monthlyMending.deleteMending(req.params._id, (err, mending) => {
+        if (err) throw err;
+        res.json(mending);
     });
 })
 
