@@ -1,91 +1,18 @@
-<!--<div class="left-nav col-md-2">
-    <nav>
-        <!--<div class="panel-group" id="accordion">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">每月车间产量汇总</a>
-                    </h4>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse in">
-                    <div class="panel-body">
-                        <li><a routerLink='dailyproduction'>车间日产量</a></li>
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">每月扣款汇总</a>
-                    </h4>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse in">
-                    <div class="panel-body">
-                        <li><a routerLink='dailydeduction'>每日扣款</a></li>
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">每月修布产量汇总</a>
-                    </h4>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse in">
-                    <div class="panel-body">
-                        <li><a routerLink='dailymending'>每日修布</a></li>
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">每月外出修布产量汇总</a>
-                    </h4>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse in">
-                    <div class="panel-body">
-                        <li><a routerLink='monthlymending'>每月外出修布</a></li>
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">每月修布考核汇总</a>
-                    </h4>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse in">
-                    <div class="panel-body">
-                        <li><a routerLink='monthlymending'>每日修布考核</a></li>
-                    </div>
-                </div>
-            </div>-->
-            
-        <!--</div>
-    </nav>
-</div>-->
-<!--<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-  <ngb-panel title="每月车间产量汇总">
-    <ng-template ngbPanelContent>
-      <li><a routerLink='dailyproduction'>车间日产量</a></li>
-    </ng-template>
-  </ngb-panel>
-</ngb-accordion>-->
-<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" *ngFor="let menu of menulist">
-    <ngb-panel title="#{menu.key}">
-        <ng-template ngbPanelContent *ngFor="let list of menu.values">
-            <li><a routerLink='#{list.routerLink}'>{{list.title}}</a></li>
+<div class="row">
+  <div class="md-col-3">
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" *ngFor="let menu of menulist">
+      <ngb-panel title="{{menu.key}}">
+        <ng-template ngbPanelContent  >
+          <ul *ngFor="let list of menu.values">
+            <li><a routerLink="{{list.routerLink}}">{{list.title}}</a></li>
+          </ul>
         </ng-template>
-    </ngb-panel>
-</ngb-accordion>
-
-<div class="content-container col-md-10">
+      </ngb-panel>
+    </ngb-accordion>
+  </div>
+  <div class="content-container col-md-9">
     <div class="content">
       <router-outlet></router-outlet>
-    <div>
-</div>
+      <div>
+      </div>
+    </div>

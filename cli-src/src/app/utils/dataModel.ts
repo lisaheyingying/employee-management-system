@@ -49,3 +49,20 @@ export const monthlyMendingHeader = [
     { key: "line", value: "绳子" },
     { key: "deduction", value: "扣款" },
 ]
+export const assessingHeader = [
+    { key: "date", value: "时间" },
+    { key: "name", value: "姓名" },
+    { key: "shift", value: "班次" },
+    { key: "line", value: "绳子" },
+    { key: "deduction", value: "扣款" },
+]
+
+
+export const monthlyOendingHeader = [
+    { key: "date", value: "时间" },
+    { key: "name", value: "姓名" },
+    { key: "shift", value: "班次" },
+    { key: "money", value: "金额" },
+    { key: "bonus", value: "补贴" }
+
+]

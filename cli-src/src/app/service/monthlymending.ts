@@ -1,7 +1,7 @@
 export class MonthlyMending {
-    date: String; // This date is first half month or last half month
+    date: String;
     name: String;
     shift: String;
-    money: Number;
-    bonus: Number;
+    category: String;
+    production: Number;
 }

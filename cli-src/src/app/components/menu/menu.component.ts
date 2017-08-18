@@ -9,10 +9,10 @@ import {Router} from '@angular/router'
     styleUrls: ['./menu.component.scss']
 })
 
-export class MenuComponent implements OnInit {
+export class MenuComponent {
     @Input() menulist: any[];
-    constructor() { }
-    ngOnInit() {
+    // constructor() { }
+    // ngOnInit() {
        
-    }
+    // }
 }

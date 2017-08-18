@@ -13,22 +13,28 @@ import { AddComponent } from './add/add-employee.component';
 import { EditComponent } from './edit/edit.component';
 import { ShowComponent } from './show/show.component';
 
-import { DailyProductionComponent } from './production/dailyproduction/dailyproduction.component'
+import { DailyProductionComponent } from './production/production/dailyproduction/dailyproduction.component'
 import { AddProductionComponent } from './add/add-production.component';
 import { EditProductionComponent } from './edit/edit-production.component'
 import { ShowProductionComponent } from './show/show-production.component'
 
-import { DailyDeductionComponent } from './production/dailyDeduction/dailyDeduction.component'
+import { DailyDeductionComponent } from './production/Deduction/dailyDeduction/dailyDeduction.component'
 import { EditDeductionComponent } from './edit/edit-deduction.component'
 import { ShowDeductionComponent } from './show/show-deduction.component'
 import { AddDeductionComponent } from './add/add-deduction.component'
 
-import { DailyMendingComponent } from './production/dailymending/dailymending.component'
+import { DailyMendingComponent } from './production/mending/dailymending/dailymending.component'
 import { AddMendingComponent } from './add/add-mending.component'
 import { EditMendingComponent } from './edit/edit-mending.component'
 import { ShowMendingComponent } from './show/show-mending.component'
 
-import { MonthlyMendingComponent } from './production/monthlymending/monthlymending.component'
+import { MonthlyOendingComponent } from './production/oending/monthlyoending/monthlyoending.component'
+// import { AddOendingComponent } from './add/add-mending.component'
+// import { EditOendingComponent } from './edit/edit-mending.component'
+// import { ShowOendingComponent } from './show/show-mending.component'
+
+
+import { MonthlyMendingComponent } from './production/mending/monthlymending/monthlymending.component'
 import { AddMonthlyMendingComponent } from './add/add-monthlymending.component'
 import { EditMonthlyMendingComponent } from './edit/edit-monthlymending.component'
 import { ShowMonthlyMendingComponent } from './show/show-monthlymending.component'
@@ -42,9 +48,14 @@ const routes: Routes = [
     path: 'production-overview', component: ProductionOverview,
     children: [
       { path: '', redirectTo: 'dailyproduction', pathMatch: 'full' },
+      // { path: 'monthlyproduction', component: MonthlyProductionComponent },
+      // { path: 'monthlydeduction', component: MonthlyDeductionComponent },
+      // { path: 'monthlymending', component: MonthlyMendingComponent },
+      // { path: 'monthlyassessing', component: MonthlyAssessingComponent },
       { path: 'dailyproduction', component: DailyProductionComponent },
       { path: 'dailydeduction', component: DailyDeductionComponent },
       { path: 'dailymending', component: DailyMendingComponent },
+      { path: 'monthlyoending', component: MonthlyOendingComponent },
     ]
   },
   { path: 'dailyproduction/add', component: AddProductionComponent },
@@ -58,6 +69,8 @@ const routes: Routes = [
   { path: 'dailymending/add', component: AddMendingComponent },
   { path: 'dailymending/edit/:id', component: EditMendingComponent },
   { path: 'dailymending/show/:id', component: ShowMendingComponent },
+
+  
 
   { path: 'employee/add', component: AddComponent },
   { path: 'employee/edit/:id', component: EditComponent },

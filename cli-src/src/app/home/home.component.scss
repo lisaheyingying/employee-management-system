@@ -1,5 +1,3 @@
-
-
 .menuBox {
   text-align: center;
   padding: 0;
@@ -16,14 +14,13 @@
 }
 
 .container {
-  width:750px;
+  width: 750px;
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
+  padding-top: 150px;
 }
-
-
 
 .article,
 .section {
@@ -80,29 +77,40 @@ nav.tm_navbar li:first-child {
   display: inline-block;
 }
 
+.head-title {
+  margin-top: 10px;
+}
 
-
-.head-title,.head-list{
+.head-title,
+.head-list {
   display: inline-block;
 }
-.head-list{
-  float:right;
-  font-size:20px;
-  margin-top:20px;
-  margin-right:200px;
+
+.head-list {
+  float: right;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-right: 200px;
 }
-.header{
+
+.header {
   background: black;
   text-align: center;
 }
-.content{
-  background:lightskyblue;
+
+.content {
+  background: lightskyblue;
 }
 
-.sub-section{
-  margin:50px 30px;
+.sub-section {
+  margin: 0 30px 70px 30px
 }
-.circle{
+
+.sub-section-title {
+  margin-top: 60px;
+}
+
+.circle {
   position: absolute;
   top: -25px;
   left: -16px;
@@ -114,13 +122,13 @@ nav.tm_navbar li:first-child {
   box-sizing: border-box;
 }
 
-.sub-section-title{
-  margin-top:80px;
+.head-list {
+  li {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 0;
+    padding: 0;
+    margin: 0 0 0 43px;
+    position: relative;
+  }
 }
-.content-section{
-  margin-top:150px;
-}
-
-
-  
-

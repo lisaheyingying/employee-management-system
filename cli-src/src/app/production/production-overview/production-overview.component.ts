@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SingleTabComponent } from '../../components/tab/single-tab/single-tab.component';
 import { TabsComponent } from '../../components/tab/tabs/tabs.component';
 import { MenuComponent } from '../../components/menu/menu.component';
-import { TabsModule } from 'ng2-tabs'
+// import { TabsModule } from 'ng2-tabs'
 @Component({
     selector: 'production-overview',
     templateUrl: './production-overview.component.html',
@@ -10,29 +10,42 @@ import { TabsModule } from 'ng2-tabs'
 })
 export class ProductionOverview implements OnInit {
 
-    taboneTitle: string = '车间日产量表';
-    tabtwoTitle: string = '日修布产量表';
-    tabthrTitle: string = '月修布扣款/金额'
-    menulist = [
-        {"key":"车间月产量汇总", "values":[
-            {"title":"车间日产量", "routerLink":"dailyproduction"}
-        ]},
-        {"key":"扣款每月汇总", "values":[
-            {"title":"每日扣款", "routerLink":"dailydeduction"}
-        ]},
-        {"key":"修布每月汇总", "values":[
-            {"title":"每日修布", "routerLink":"dailymeding"}
-        ]},
-        {"key":"外出修布每月汇总", "values":[
-            {"title":"每日外出修布", "routerLink":"dailymeding"}
-        ]},
-         {"key":"考核每月汇总", "values":[
-            {"title":"每日考核", "routerLink":"dailymeding"}
-        ]},
+    tabs: any[] = [
+        {
+            "key": "车间产量", "values": [
+                { "title": "车间月产量汇总", "routerLink": "monthlyproduction" },
+                { "title": "车间日产量汇总", "routerLink": "dailyproduction" }
+            ]
+        },
+        {
+            "key": "扣款", "values": [
+                { "title": "每月扣款汇总", "routerLink": "monthlydeduction" },
+                { "title": "每日扣款汇总", "routerLink": "dailydeduction" }
+            ]
+        },
+        {
+            "key": "修布", "values": [
+                { "title": "每月修布汇总", "routerLink": "monthlymending" },
+                { "title": "每日修布汇总", "routerLink": "dailymending" }
+            ]
+        },
+        {
+            "key": "外出修布", "values": [
+                { "title": "每月外出修布汇总", "routerLink": "monthlyoending" },
+                { "title": "每日外出修布汇总", "routerLink": "dailyoending" }
+            ]
+        },
+        {
+            "key": "下机考核", "values": [
+                { "title": "每月考核汇总", "routerLink": "monthlyassesing" },
+                { "title": "每日考核汇总", "routerLink": "dailyassessing" }
+            ]
+        },
 
     ]
     constructor(
 
     ) { }
-    ngOnInit() { }
+    ngOnInit() {
+    }
 }

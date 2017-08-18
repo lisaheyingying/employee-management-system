@@ -1,12 +1,13 @@
 let express = require('express');
 let router = express.Router();
-let Employee = require('./model');
+let Employee = require('./models/model');
 
 let dailyProduction = require('./models/dailyProduction');
 let monthProduction = require('./models/monthProduction');
 let dailyDeduction = require('./models/dailyDeduction');
 let dailyMending = require('./models/dailyMending');
 let monthlyMending = require('./models/monthlyMending');
+let monthlyOending = require('./models/monthlyOending');
 
 //******   Get request ********/
 
@@ -82,6 +83,12 @@ router.get('/mendings/:date', (req, res) => {
     dailyMending.getMendings(req.params.date, (err, mendings) => {
         if (err) throw err;
         res.json(mendings);
+    });
+})
+router.get('/monthlyoendings/:date', (req, res) => {
+    monthlyOending.getOendings(req.params.date, (err, oendings) => {
+        if (err) throw err;
+        res.json(oendings);
     });
 })
 
@@ -160,6 +167,19 @@ router.post('/monthlymending', (req, res) => {
     monthlyMending.addMending(newMending, (err, Mending) => {
         if (err) throw err;
         res.json(newMending);
+    });
+})
+router.post('/monthlyoending', (req, res) => {
+    let newOending = {
+        date: req.body.date,
+        name: req.body.name,
+        shift: req.body.shift,
+        money: req.body.money,
+        bonus: req.body.bonus
+    }
+    monthlyOending.addOending(newOending, (err, Oending) => {
+        if (err) throw err;
+        res.json(newOending);
     });
 })
 

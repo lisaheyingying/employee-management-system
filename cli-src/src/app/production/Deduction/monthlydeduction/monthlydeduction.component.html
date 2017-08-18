@@ -1,0 +1,27 @@
+
+<div>
+  <app-navbar 
+    [page]="page"
+    [pageTitle]="pageTitle">
+	</app-navbar>
+  <div class="container">
+    <div>
+      <span class="large-font">选择日期</span>
+      <div class="date-selector">
+        <input class="date-input"
+        [(ngModel)]="selectedDate"
+        (ngModelChange)="getDeductions($event)"
+        required
+        ngui-datetime-picker
+        date-only="true" />
+      </div>
+    </div>
+      <standard-table
+      class="highlight-table"
+      [tableHeader]="header"
+      [tableContent]="content"
+      [page]="page.toLowerCase()"
+      (delete)="deleteDeduction($event)">
+    </standard-table>
+  </div>
+</div>

@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http';
 import { NguiDatetimePickerModule } from '@ngui/datetime-picker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { TabsModule } from 'ng2-tabs';
+// import { TabsModule } from 'ng2-tabs';
 import { NgbModule, NgbAccordionConfig } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
@@ -27,7 +27,7 @@ import { EditComponent } from './edit/edit.component';
 import { ShowComponent } from './show/show.component';
 import { EmploymanPipe } from './employman/employman.component.pipe';
 
-import { DailyProductionComponent } from './production/dailyproduction/dailyproduction.component';
+import { DailyProductionComponent } from './production/production/dailyproduction/dailyproduction.component';
 import { DailyProductionService } from './service/dailyproduction.service';
 import { AddProductionComponent } from './add/add-production.component';
 import { EditProductionComponent } from './edit/edit-production.component'
@@ -35,25 +35,27 @@ import { ShowProductionComponent } from './show/show-production.component'
 
 
 
-import { DailyDeductionComponent } from './production/dailyDeduction/dailyDeduction.component'
+import { DailyDeductionComponent } from './production/Deduction/dailyDeduction/dailyDeduction.component'
 import { DailyDeductionService } from './service/dailydeduction.service';
 import { ShowDeductionComponent } from './show/show-deduction.component'
 import { AddDeductionComponent } from './add/add-deduction.component'
 import { EditDeductionComponent } from './edit/edit-deduction.component'
 
 
-import { DailyMendingComponent } from './production/dailymending/dailymending.component'
+import { DailyMendingComponent } from './production/mending/dailymending/dailymending.component'
 import { DailyMendingService } from './service/dailymending.service';
 import { ShowMendingComponent } from './show/show-mending.component'
 import { AddMendingComponent } from './add/add-mending.component'
 import { EditMendingComponent } from './edit/edit-mending.component'
 
-import { MonthlyMendingComponent } from './production/monthlymending/monthlymending.component'
+import { MonthlyMendingComponent } from './production/mending/monthlymending/monthlymending.component'
 import { MonthlyMendingService } from './service/monthlymending.service';
 import { AddMonthlyMendingComponent } from './add/add-monthlymending.component'
 import { EditMonthlyMendingComponent } from './edit/edit-monthlymending.component'
 import { ShowMonthlyMendingComponent } from './show/show-monthlymending.component'
 
+import { MonthlyOendingComponent } from './production/oending/monthlyoending/monthlyoending.component'
+import { MonthlyOendingService } from './service/monthlyoending.service';
 //import '../assets/styles/styles.scss';
 
 
@@ -88,7 +90,8 @@ import { ShowMonthlyMendingComponent } from './show/show-monthlymending.componen
     MonthlyMendingComponent,
     AddMonthlyMendingComponent,
     EditMonthlyMendingComponent,
-    ShowMonthlyMendingComponent
+    ShowMonthlyMendingComponent,
+    MonthlyOendingComponent
 
 
 
@@ -100,10 +103,9 @@ import { ShowMonthlyMendingComponent } from './show/show-monthlymending.componen
     AppRoutingModule,
     NguiDatetimePickerModule,
     ReactiveFormsModule,
-    TabsModule,
     NgbModule
   ],
-  providers: [EmpService, DailyProductionService, DailyDeductionService, DailyMendingService, MonthlyMendingService, NgbAccordionConfig],
+  providers: [EmpService, DailyProductionService, DailyDeductionService, DailyMendingService, MonthlyMendingService, NgbAccordionConfig, MonthlyOendingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

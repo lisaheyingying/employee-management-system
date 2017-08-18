@@ -1,0 +1,15 @@
+<div>
+  <app-navbar 
+    [page]="page"
+    [pageTitle]="pageTitle">
+	</app-navbar>
+  <div class="container">
+    <standard-table
+      class="highlight-table"
+      [tableHeader]="header"
+      [tableContent]="content"
+      [page]="page.toLowerCase()"
+      (delete)="deleteOending($event)">
+    </standard-table>
+  </div>
+</div>
