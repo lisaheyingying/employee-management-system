@@ -1,4 +1,4 @@
-export class DailyDeduction {
+export class MonthlyDeduction {
     date: String;
     name: String;
     shift: String;

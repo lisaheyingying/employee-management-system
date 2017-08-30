@@ -3,6 +3,7 @@ import { DailyAssessingService } from '../../../service/dailyassessing.service'
 import { EmpService } from '../../../service/emp.service'
 import { DailyAssessing } from '../../../service/dailyassessing'
 import { assessingHeader } from '../../../utils/dataModel'
+import { baseProductionUrl } from '../../../utils/app.constants'
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as moment from 'moment'
 
@@ -67,6 +68,6 @@ export class DailyAssessingComponent implements OnInit {
             });
     }
     goBack() {
-        this.router.navigate(['/dailyassessing'])
+        this.router.navigate([`/${baseProductionUrl}/dailyassessing`])
     }
 }

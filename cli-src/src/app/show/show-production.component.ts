@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { DailyProductionService } from '../service/dailyproduction.service'
 import { DailyProduct } from '../service/dailyproduction'
+import { baseProductionUrl } from '../utils/app.constants'
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
 
@@ -31,6 +32,6 @@ export class ShowProductionComponent implements OnInit {
         })
   }
   goBack(){
-    this.router.navigate(['/dailyproduction'])
+    this.router.navigate([`/${baseProductionUrl}/dailyproduction`])
   }
 }

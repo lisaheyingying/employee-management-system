@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MonthlyDeductionService } from '../../../service/MonthlyDeduction.service'
+import { MonthlyDeductionService } from '../../../service/monthlydeduction.service'
 import { EmpService } from '../../../service/emp.service'
-import { MonthlyDeduction } from '../../../service/MonthlyDeduction'
+import { MonthlyDeduction } from '../../../service/monthlydeduction'
 import { deductHeader } from '../../../utils/dataModel'
+import { baseProductionUrl } from '../../../utils/app.constants'
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as moment from 'moment'
 
@@ -67,6 +68,6 @@ export class MonthlyDeductionComponent implements OnInit {
             });
     }
     goBack() {
-        this.router.navigate(['/production-overview/MonthlyDeduction'])
+        this.router.navigate([`/${baseProductionUrl}/MonthlyDeduction`])
     }
 }

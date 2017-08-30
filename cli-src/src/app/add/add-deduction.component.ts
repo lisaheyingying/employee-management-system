@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { DailyDeductionService } from '../service/dailydeduction.service'
 import { DailyDeduction } from '../service/dailydeduction'
+import { baseProductionUrl } from '../utils/app.constants'
+
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
@@ -21,10 +23,11 @@ export class AddDeductionComponent implements OnInit {
   }
   model = new DailyDeduction();
   addDeduction(){
+    this.model.date = this.model.date.toString()
     this.deductionService.addDeduction(this.model)
         .subscribe(()=> this.goBack())
   }
    goBack(){
-    this.router.navigate(['/production-overview/dailydeduction'])
+    this.router.navigate([`/${baseProductionUrl}/dailydeduction`])
   }
 }

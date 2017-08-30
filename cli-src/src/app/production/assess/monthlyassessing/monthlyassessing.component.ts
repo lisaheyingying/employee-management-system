@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DailyAssessingService } from '../../../service/dailyassessing.service'
 import { EmpService } from '../../../service/emp.service'
 import { DailyAssessing } from '../../../service/dailyassessing'
+import { baseProductionUrl } from '../../../utils/app.constants'
 import { assessingHeader } from '../../../utils/dataModel'
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as moment from 'moment'
@@ -12,7 +13,7 @@ import * as moment from 'moment'
     styleUrls: ['./dailyassessing.component.scss']
 })
 
-export class DailyAssessingComponent implements OnInit {
+export class dailyAssessingComponent implements OnInit {
     //assessings: any[] = [];
     header: any[] = assessingHeader;
     content: any[] = [];
@@ -67,6 +68,6 @@ export class DailyAssessingComponent implements OnInit {
             });
     }
     goBack() {
-        this.router.navigate(['/dailyassessing'])
+        this.router.navigate([`/${baseProductionUrl}/dailyassessing`])
     }
 }

@@ -1,89 +1,49 @@
-	<div class="panel panel-default">
-  <div class="panel-heading">Production Edit Form : You can edit an production's detail information into this EMS Apps.</div>
+<div class="panel panel-default">
+  <!-- <div class="panel-heading">Production Edit Form : You can edit an production's detail information into this EMS Apps.</div> -->
   <div class="panel-body">
-  <form class="form-horizontal" (submit)="updateProduction()">
-  <div class="form-group">
-    <label for="name" class="col-sm-2 control-label">姓名 :</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="production.name" name="name" >
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="date" class="col-sm-2 control-label">时间 : </label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="production.date" name="date">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="shift" class="col-sm-2 control-label">班次 : </label>
-    <!--<div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="production.shift" name="shift">
-    </div>-->
-    <div class="col-sm-9">
-        <select class="form-control" name="shift" ng-model="production.shift">
-            <option value="day">早班</option>
-            <option value="night">晚班</option>
+    <form class="form-horizontal" (submit)="updateProduction()">
+      <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">姓名</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" [(ngModel)]="production.name" name="name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="date" class="col-sm-2 control-label">时间</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" [(ngModel)]="production.date" name="date">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="shift" class="col-sm-2 control-label">班次</label>
+          <div class="col-sm-9">
+          <select class="form-control" name="shift" [(ngModel)]="production.shift" ng-init="production.shift='早班'">
+            <option value="早班">早班</option>
+            <option value="晚班">晚班</option>
         </select>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="area" class="col-sm-2 control-label">区域 : </label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="production.area" name="area">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="c1" class="col-sm-2 control-label">C1 产量 : </label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="production.c1" name="c1">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="c2" class="col-sm-2 control-label">C2 产量 : </label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="production.c2" name="c2">
-    </div>
-  </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="area" class="col-sm-2 control-label">区域 </label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" [(ngModel)]="production.area" name="area">
+        </div>
+      </div>
 
-  <div class="form-group">
-    <label for="c3" class="col-sm-2 control-label">C3 产量 : </label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="production.c3" name="c3">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="c4" class="col-sm-2 control-label">C4 产量 : </label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="production.c4" name="c4">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="c5" class="col-sm-2 control-label">C5 产量 : </label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="production.c5" name="c5">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="c6" class="col-sm-2 control-label">C6 产量 : </label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="production.c6" name="c6">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="c7" class="col-sm-2 control-label">C7 产量 : </label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="production.c7" name="c7">
-    </div>
-  </div>
+      <div class="form-group" *ngFor="let product of productCategory">
+        <label for="product.key" class="col-sm-2 control-label">{{product.value}}</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" [(ngModel)]="production[product.key]" [name]="product.key">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-8">
+          <button type="submit" class="btn btn-success">更新</button>
+          <a class="btn btn-info" (click)="goBack()">取消</a>
+        </div>
 
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-8">
-      <button type="submit" class="btn btn-success">Update</button>
-       <a class="btn btn-info" (click)="goBack()">Cancel</a>
-    </div>
-   
-  </div>
-</form>
+      </div>
+    </form>
 
   </div>
 </div>

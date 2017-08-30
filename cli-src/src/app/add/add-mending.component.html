@@ -19,7 +19,7 @@
     <label for="shift" class="col-sm-2 control-label">班次 : </label>
     <div class="col-sm-9">
         <select class="form-control" name="shift" ng-model="mending.shift">
-            <option value="day">早班</option>
+            <option selected value="day">早班</option>
             <option value="night">晚班</option>
         </select>
     </div>
@@ -27,7 +27,7 @@
   <div class="form-group">
     <label for="category" class="col-sm-2 control-label">分类 : </label>
     <div class="col-sm-9">
-      <input type="text" class="form-control" [(ngModel)]="mending.category" name="category" >
+      <input type="text" class="form-control" [(ngModel)]="mending.category" name="category">
     </div>
   </div>
 
@@ -40,8 +40,8 @@
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-8">
-      <button type="submit" class="btn btn-success">Save</button>
-       <a class="btn btn-info" (click)="goBack()">Cancel</a>
+      <button type="submit" class="btn btn-success">保存</button>
+       <a class="btn btn-info" (click)="goBack()">取消</a>
     </div>
    
   </div>

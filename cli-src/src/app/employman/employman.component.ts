@@ -16,6 +16,7 @@ export class EmploymanComponent implements OnInit {
   header: any[] = employeeHeader;
   content: any[] = [];
   page: string = 'Employee';
+  pageTitle: string ='员工信息';
 
 
   constructor(

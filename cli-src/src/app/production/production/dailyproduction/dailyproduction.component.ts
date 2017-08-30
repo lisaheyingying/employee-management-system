@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DailyProductionService } from '../../../service/dailyproduction.service'
 import { EmpService } from '../../../service/emp.service'
 import { DailyProduct } from '../../../service/dailyproduction'
+import { baseProductionUrl } from '../../../utils/app.constants'
 import { productHeader, productCategoryMap } from '../../../utils/dataModel'
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as moment from 'moment'
@@ -29,7 +30,7 @@ export class DailyProductionComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.getProductions(this.selectedDate);
+        //this.getProductions(this.selectedDate);
     }
 
 
@@ -73,6 +74,6 @@ export class DailyProductionComponent implements OnInit {
             });
     }
     goBack() {
-        this.router.navigate(['/dailyproduction'])
+        this.router.navigate([`/${baseProductionUrl}/dailyproduction`])
     }
 }

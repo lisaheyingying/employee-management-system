@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { DailyDeductionService } from '../service/dailydeduction.service'
 import { DailyDeduction } from '../service/dailydeduction'
+import { baseProductionUrl } from '../utils/app.constants'
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
 
@@ -31,6 +32,6 @@ export class ShowDeductionComponent implements OnInit {
         })
   }
   goBack(){
-    this.router.navigate(['/dailydeduction'])
+    this.router.navigate([`/${baseProductionUrl}/dailydeduction`])
   }
 }

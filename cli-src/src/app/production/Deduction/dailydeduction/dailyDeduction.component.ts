@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DailyDeductionService } from '../../../service/dailydeduction.service'
 import { EmpService } from '../../../service/emp.service'
 import { DailyDeduction } from '../../../service/dailyDeduction'
+import { baseProductionUrl } from '../../../utils/app.constants'
 import { deductHeader } from '../../../utils/dataModel'
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as moment from 'moment'
@@ -29,11 +30,12 @@ export class DailyDeductionComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.getDeductions(this.selectedDate);
+        //this.getDeductions(this.selectedDate);
     }
 
 
-    getDeductions(date) {
+    getDeductions(selectedDate) {
+        let date = selectedDate.toString()
         this.dailyDeductionService.getDeductions(date)
             .subscribe(deductions => {
                 this.content = [];
@@ -67,6 +69,6 @@ export class DailyDeductionComponent implements OnInit {
             });
     }
     goBack() {
-        this.router.navigate(['/production-overview/dailydeduction'])
+        this.router.navigate([`/${baseProductionUrl}/dailydeduction`])
     }
 }

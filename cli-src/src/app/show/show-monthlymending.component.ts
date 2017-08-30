@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { MonthlyMendingService } from '../service/monthlymending.service'
 import { MonthlyMending } from '../service/monthlymending'
+import { baseProductionUrl } from '../utils/app.constants'
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
 
@@ -31,6 +32,6 @@ export class ShowMonthlyMendingComponent implements OnInit {
         })
   }
   goBack(){
-    this.router.navigate(['/production-overview/monthlymending'])
+    this.router.navigate([`/${baseProductionUrl}/monthlymending`])
   }
 }

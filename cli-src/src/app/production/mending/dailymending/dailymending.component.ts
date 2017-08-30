@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DailyMendingService } from '../../../service/dailymending.service'
 import { EmpService } from '../../../service/emp.service'
 import { DailyMending } from '../../../service/dailymending'
+import { baseProductionUrl } from '../../../utils/app.constants'
 import { mendingHeader } from '../../../utils/dataModel'
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as moment from 'moment'
@@ -29,11 +30,10 @@ export class DailyMendingComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.getMendings(this.selectedDate);
+        //this.getMendings(this.selectedDate);
     }
-
-
-    getMendings(date) {
+    getMendings(selectedDate) {
+        let date = selectedDate.toString()
         this.dailyMendingService.getMendings(date)
             .subscribe(mendings => {
                 this.content = [];
@@ -67,6 +67,6 @@ export class DailyMendingComponent implements OnInit {
             });
     }
     goBack() {
-        this.router.navigate(['/dailymending'])
+        this.router.navigate([`/${baseProductionUrl}/dailymending`])
     }
 }

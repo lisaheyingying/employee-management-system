@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { DailyMendingService } from '../service/dailymending.service';
 import { DailyMending } from '../service/dailymending';
+import { baseProductionUrl } from '../utils/app.constants'
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
@@ -37,6 +38,6 @@ export class EditMendingComponent implements OnInit {
     }
 
     goBack() {
-        this.router.navigate(['/production-overview/dailymending'])
+        this.router.navigate([`/${baseProductionUrl}/dailymending`])
     }
 }
